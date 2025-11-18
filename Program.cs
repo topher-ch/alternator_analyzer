@@ -6,11 +6,24 @@ using OsuParsers.Beatmaps;
 using OsuParsers.Decoders;
 
 TimingService timingService = new TimingService();
+AlternationService alternationService = new AlternationService();
+alternationService.RedDefaultHand = HandAssignment.RIGHT;
+alternationService.BlueDefaultHand = HandAssignment.RIGHT;
+alternationService.ResetOnFinishers = true;
+alternationService.ResetOnSingletapSnapDivisor = false;
 
 Beatmap beatmap =
     BeatmapDecoder.Decode(
         "/home/christopher/RiderProjects/alternator_analyser/Cansol - Train of Thought (Nurend) [Last Stop].osu");
-Console.WriteLine(timingService.SingletapBeatSnapDivisor(beatmap));
-
-beatmap = BeatmapDecoder.Decode("/home/christopher/RiderProjects/alternator_analyser/DM DOKURO - Reality Check Through The Skull (T w i g) [Determination].osu");
-Console.WriteLine(timingService.SingletapBeatSnapDivisor(beatmap));
+BeatSnapDivisor? singletapBeatSnapDivisor = timingService.SingletapBeatSnapDivisor(beatmap);
+if (singletapBeatSnapDivisor == null)
+{
+    Console.WriteLine("no singletap beat snap divisor found");
+    return;
+}
+List<AlternationService.AlternatedHitObject> alternatedHitObjects = alternationService.MapAlternation(beatmap, singletapBeatSnapDivisor.Value);
+foreach (AlternationService.AlternatedHitObject alternatedObject in alternatedHitObjects)
+{
+    Console.WriteLine("Offset: " + alternatedObject.hitObject.StartTime);
+    Console.WriteLine("Hand Assignment: " + alternatedObject.handAssignment);
+}
