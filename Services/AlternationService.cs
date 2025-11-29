@@ -19,7 +19,7 @@ public class AlternationService
         public HandAssignment  handAssignment { get; set; }
     }
     
-    public List<AlternatedHitObject> MapAlternation(Beatmap beatmap, BeatSnapDivisor singletapBeatSnapDivisor)
+    public List<AlternatedHitObject> MapAlternation(Beatmap beatmap, BeatSnapDivisor alternatedBeatSnapDivisor)
     {
         List<AlternatedHitObject> alternatedHitObjects = new List<AlternatedHitObject>();
         
@@ -51,7 +51,7 @@ public class AlternationService
 
             // find the next hand assignment
             HandAssignment handAssignment = NextHandAssignment(prevAltHitObject, nextHitObject, currentBeatSnapLengths,
-                singletapBeatSnapDivisor);
+                alternatedBeatSnapDivisor);
             AlternatedHitObject alternatedHitObject = new AlternatedHitObject();
             alternatedHitObject.hitObject = nextHitObject;
             alternatedHitObject.handAssignment = handAssignment;
@@ -65,7 +65,7 @@ public class AlternationService
     }
 
     public HandAssignment NextHandAssignment(AlternatedHitObject? prevAltHitObject, HitObject nextHitObject, 
-        Dictionary<BeatSnapDivisor, double> currentBeatSnapLengths, BeatSnapDivisor singletapBeatSnapDivisor)
+        Dictionary<BeatSnapDivisor, double> currentBeatSnapLengths, BeatSnapDivisor alternatedBeatSnapDivisor)
     {
         // if there is no previous object
         if (prevAltHitObject == null)
@@ -103,7 +103,7 @@ public class AlternationService
                 BeatSnapDivisor closestBeatSnapDivisor =
                     TimingService.ClosestBeatSnapDivisor(distance, currentBeatSnapLengths);
                 if (prevAltHitObject.handAssignment == HandAssignment.BOTH 
-                    || (ResetOnSingletapSnapDivisor && closestBeatSnapDivisor >= singletapBeatSnapDivisor))
+                    || (ResetOnSingletapSnapDivisor && closestBeatSnapDivisor >= alternatedBeatSnapDivisor))
                 {
                     return (taikoHit.Color == TaikoColor.Red) ? RedDefaultHand : BlueDefaultHand;
                 }

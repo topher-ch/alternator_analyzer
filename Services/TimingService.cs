@@ -7,7 +7,7 @@ namespace alternator_analyser.Services;
 
 public class TimingService
 {
-    public BeatSnapDivisor? SingletapBeatSnapDivisor(Beatmap beatmap)
+    public BeatSnapDivisor? MostCommonBeatSnapDivisor(Beatmap beatmap)
     {
         // Beat snap divisor counts initialized to 0
         Dictionary<BeatSnapDivisor, int> beatSnapDivisorCounts = new Dictionary<BeatSnapDivisor, int>();

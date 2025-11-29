@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/christopher/RiderProjects/alternator_analyser/alternator_analyser.csproj": {}
+    "C:\\Users\\chris\\RiderProjects\\alternator_analyzer\\alternator_analyser.csproj": {}
   },
   "projects": {
-    "/home/christopher/RiderProjects/alternator_analyser/alternator_analyser.csproj": {
+    "C:\\Users\\chris\\RiderProjects\\alternator_analyzer\\alternator_analyser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/christopher/RiderProjects/alternator_analyser/alternator_analyser.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\RiderProjects\\alternator_analyzer\\alternator_analyser.csproj",
         "projectName": "alternator_analyser",
-        "projectPath": "/home/christopher/RiderProjects/alternator_analyser/alternator_analyser.csproj",
-        "packagesPath": "/home/christopher/.nuget/packages/",
-        "outputPath": "/home/christopher/RiderProjects/alternator_analyser/obj/",
+        "projectPath": "C:\\Users\\chris\\RiderProjects\\alternator_analyzer\\alternator_analyser.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chris\\RiderProjects\\alternator_analyzer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/christopher/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/christopher/.dotnet/sdk/9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

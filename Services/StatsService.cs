@@ -13,7 +13,7 @@ public class StatsService
         public int BothCount { get; set; }
     }
     
-    public Dictionary<(BeatSnapDivisor beatSnapDivisor, int length), Counts> Stats(Beatmap beatmap, BeatSnapDivisor singletapBeatSnapDivisor,
+    public Dictionary<(BeatSnapDivisor beatSnapDivisor, int length), Counts> Stats(Beatmap beatmap, BeatSnapDivisor alternatedBeatSnapDivisor,
         List<AlternationService.AlternatedHitObject> alternatedHitObjects)
     {
         Dictionary<(BeatSnapDivisor beatSnapDivisor, int length), Counts> patternCounts =
@@ -53,7 +53,7 @@ public class StatsService
             BeatSnapDivisor closestBeatSnapDivisor = TimingService.ClosestBeatSnapDivisor(distance, currentBeatSnapLengths);
 
             // if it is not the end of a pattern, update length and divisors and continue to the next hitobjects
-            if (closestBeatSnapDivisor >= singletapBeatSnapDivisor)
+            if (closestBeatSnapDivisor >= alternatedBeatSnapDivisor)
             {
                 beatSnapDivisors |= closestBeatSnapDivisor;
                 patternLength += 1;

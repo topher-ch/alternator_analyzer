@@ -15,14 +15,14 @@ StatsService statsService = new StatsService();
 
 Beatmap beatmap =
     BeatmapDecoder.Decode(
-        "/home/christopher/RiderProjects/alternator_analyser/Cansol - Train of Thought (Nurend) [Last Stop].osu");
-BeatSnapDivisor? singletapBeatSnapDivisor = timingService.SingletapBeatSnapDivisor(beatmap);
-if (singletapBeatSnapDivisor == null)
+        "C:\\Users\\chris\\RiderProjects\\alternator_analyzer\\Cansol - Train of Thought (Nurend) [Last Stop].osu");
+BeatSnapDivisor? mostCommonBeatSnapDivisor = timingService.MostCommonBeatSnapDivisor(beatmap);
+if (mostCommonBeatSnapDivisor == null)
 {
     Console.WriteLine("no singletap beat snap divisor found");
     return;
 }
-List<AlternationService.AlternatedHitObject> alternatedHitObjects = alternationService.MapAlternation(beatmap, singletapBeatSnapDivisor.Value);
+List<AlternationService.AlternatedHitObject> alternatedHitObjects = alternationService.MapAlternation(beatmap, mostCommonBeatSnapDivisor.Value);
 foreach (AlternationService.AlternatedHitObject alternatedObject in alternatedHitObjects)
 {
     Console.WriteLine("Offset: " + alternatedObject.hitObject.StartTime);

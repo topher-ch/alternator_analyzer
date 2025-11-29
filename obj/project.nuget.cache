@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "A60p4bRJle0=",
+  "dgSpecHash": "LtOXdJvplcg=",
   "success": true,
-  "projectFilePath": "/home/christopher/RiderProjects/alternator_analyser/alternator_analyser.csproj",
+  "projectFilePath": "C:\\Users\\chris\\RiderProjects\\alternator_analyzer\\alternator_analyser.csproj",
   "expectedPackageFiles": [
-    "/home/christopher/.nuget/packages/osuparsers/1.7.2/osuparsers.1.7.2.nupkg.sha512",
-    "/home/christopher/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\chris\\.nuget\\packages\\osuparsers\\1.7.2\\osuparsers.1.7.2.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
