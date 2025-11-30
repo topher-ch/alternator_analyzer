@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="OsuMemoryDataProvider" Version="0.11.1" />
       <PackageReference Include="OsuParsers" Version="1.7.2" />
     </ItemGroup>
 
