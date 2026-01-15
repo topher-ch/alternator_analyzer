@@ -1,4 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
 using OsuParsers.Beatmaps;
 using alternator_analyser.Models;
 using OsuParsers.Beatmaps.Objects;
